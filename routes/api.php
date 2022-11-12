@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\v1\user\UserCreateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//api v1
+
+Route::post('/v1/user/create',[UserCreateController::class, 'createUser']);
+
+//----
