@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\api\v1\cars\CarAddController;
+use App\Http\Controllers\api\v1\cars\CarDeleteController;
+use App\Http\Controllers\api\v1\cars\CarListController;
 use App\Http\Controllers\api\v1\user\UserCreateController;
 use App\Http\Controllers\api\v1\user\UserRoleController;
 use Illuminate\Http\Request;
@@ -26,7 +29,9 @@ Route::post('/v1/user/role', [UserRoleController::class, 'roleUser'])->middlewar
 
 //Admin
     //Car
-Route::get('/v1/admin/cars', [UserRoleController::class, 'findcars'])->middleware('apiauthadmin');
+Route::get('/v1/admin/cars', [CarListController::class, 'get'])->middleware('apiauthadmin');
+Route::post('/v1/admin/cars/add', [CarAddController::class, 'add'])->middleware('apiauthadmin'); //В Swagger
+Route::post('/v1/admin/cars/delete', [CarDeleteController::class, 'delete'])->middleware('apiauthadmin'); //В Swagger
     //---
 //---
 
