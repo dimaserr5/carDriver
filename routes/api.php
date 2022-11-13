@@ -29,13 +29,13 @@ Route::post('/v1/user/create',[UserCreateController::class, 'createUser']);
 
 Route::post('/v1/user/role', [UserRoleController::class, 'roleUser'])->middleware('apiauth');
 
-Route::get('/v1/user/cars', [CarListController::class, 'getForUser'])->middleware('apiauth'); // В swagger
+Route::get('/v1/user/cars', [CarListController::class, 'getForUser'])->middleware('apiauth');
 
-Route::get('/v1/user/cars/info', [CarInfoController::class, 'getInfoCar'])->middleware('apiauth'); // В swagger
+Route::get('/v1/user/cars/info', [CarInfoController::class, 'getInfoCar'])->middleware('apiauth');
 
-Route::post('/v1/user/cars/rent', [CarRentController::class, 'rentCar'])->middleware('apiauth'); // В swagger
+Route::post('/v1/user/cars/rent', [CarRentController::class, 'rentCar'])->middleware('apiauth');
 
-Route::post('/v1/user/cars/unrent', [CarUnRentController::class, 'unRentCar'])->middleware('apiauth'); // В swagger
+Route::post('/v1/user/cars/unrent', [CarUnRentController::class, 'unRentCar'])->middleware('apiauth');
 
 //---
 
