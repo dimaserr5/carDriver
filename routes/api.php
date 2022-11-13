@@ -19,10 +19,15 @@ use Illuminate\Support\Facades\Route;
 //api v1
 
 //User
-
 Route::post('/v1/user/create',[UserCreateController::class, 'createUser']);
 
 Route::post('/v1/user/role', [UserRoleController::class, 'roleUser'])->middleware('apiauth');
+//---
+
+//Admin
+    //Car
+Route::get('/v1/admin/cars', [UserRoleController::class, 'findcars'])->middleware('apiauthadmin');
+    //---
 //---
 
 //----
