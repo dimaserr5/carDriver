@@ -1,8 +1,7 @@
 openapi: 3.0.3
 info:
   title: carDriver
-  description: |-
-    carDriver Api - Способ взаимодействия с приложением через REST API зпросы
+  description: carDriver Api - Способ взаимодействия с приложением через REST API зпросы
   contact:
     email: dimaserr5@gmail.com
   version: 1.0.0
@@ -464,7 +463,7 @@ components:
           example: true
         message:
           type: string
-          example: idCar ID 'ID' delete
+          example: Car ID 'ID' delete
 
       xml:
         name: admin_delete_cars
