@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('gos_number');
-            $table->integer('userid');
+            $table->integer('userid')->nullable();
             $table->timestamps();
         });
     }
