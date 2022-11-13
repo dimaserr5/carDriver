@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\api\v1\cars\CarAddController;
 use App\Http\Controllers\api\v1\cars\CarDeleteController;
+use App\Http\Controllers\api\v1\cars\CarInfoController;
 use App\Http\Controllers\api\v1\cars\CarListController;
 use App\Http\Controllers\api\v1\cars\CarRentController;
 use App\Http\Controllers\api\v1\cars\CarUnRentController;
@@ -27,6 +28,10 @@ use Illuminate\Support\Facades\Route;
 Route::post('/v1/user/create',[UserCreateController::class, 'createUser']);
 
 Route::post('/v1/user/role', [UserRoleController::class, 'roleUser'])->middleware('apiauth');
+
+Route::get('/v1/user/cars', [CarListController::class, 'getForUser'])->middleware('apiauth'); // В swagger
+
+Route::get('/v1/user/cars/info', [CarInfoController::class, 'getInfoCar'])->middleware('apiauth'); // В swagger
 
 Route::post('/v1/user/cars/rent', [CarRentController::class, 'rentCar'])->middleware('apiauth'); // В swagger
 

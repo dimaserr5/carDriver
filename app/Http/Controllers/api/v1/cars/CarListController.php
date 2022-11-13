@@ -15,4 +15,13 @@ class CarListController extends Controller
         return $cars;
 
     }
+
+    public function getForUser(Request $request) {
+
+        $cars = car::where('userid', null)->get();
+
+        return $cars;
+
+    }
+
 }
