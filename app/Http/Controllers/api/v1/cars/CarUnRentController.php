@@ -19,7 +19,7 @@ class CarUnRentController extends Controller
             ->first();
 
         if(!isset($car)) {
-            $response_code = 200;
+            $response_code = 404;
             $response = [
                 'status' => false,
                 'message' => "You not rent car",
