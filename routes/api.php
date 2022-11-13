@@ -4,6 +4,7 @@ use App\Http\Controllers\api\v1\cars\CarAddController;
 use App\Http\Controllers\api\v1\cars\CarDeleteController;
 use App\Http\Controllers\api\v1\cars\CarListController;
 use App\Http\Controllers\api\v1\cars\CarRentController;
+use App\Http\Controllers\api\v1\cars\CarUnRentController;
 use App\Http\Controllers\api\v1\user\UserCreateController;
 use App\Http\Controllers\api\v1\user\UserRoleController;
 use Illuminate\Http\Request;
@@ -28,6 +29,8 @@ Route::post('/v1/user/create',[UserCreateController::class, 'createUser']);
 Route::post('/v1/user/role', [UserRoleController::class, 'roleUser'])->middleware('apiauth');
 
 Route::post('/v1/user/cars/rent', [CarRentController::class, 'rentCar'])->middleware('apiauth'); // В swagger
+
+Route::post('/v1/user/cars/unrent', [CarUnRentController::class, 'unRentCar'])->middleware('apiauth'); // В swagger
 
 //---
 
