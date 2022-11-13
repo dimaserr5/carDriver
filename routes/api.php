@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\v1\user\UserCreateController;
+use App\Http\Controllers\api\v1\user\UserRoleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,11 @@ use Illuminate\Support\Facades\Route;
 
 //api v1
 
+//User
+
 Route::post('/v1/user/create',[UserCreateController::class, 'createUser']);
+
+Route::post('/v1/user/role', [UserRoleController::class, 'roleUser'])->middleware('apiauth');
+//---
 
 //----
